@@ -260,7 +260,7 @@ class ExplorationTracker(commands.Cog):
                     await ctx.author.send(embed=embed)
                 out = [exploration.get_summary()]
                 await ctx.send("\n".join(out))
-                if messages[0] is not None:
+                if messages[0] is not None and messages[0] != "":
                     embed = EmbedWithColor()
                     embed.description = messages[0]
                     await ctx.send(embed=embed)

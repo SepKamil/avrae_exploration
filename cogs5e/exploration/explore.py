@@ -354,14 +354,11 @@ class Explore:
         if self._enctimer != 0 and enc is not None:
             div = num_rounds // self._enctimer
             mod = num_rounds % self._enctimer
-            log.warning(mod)
-            log.warning(self._enctimer)
             if div == 0:
                 self._enctimer -= num_rounds
             else:
                 self._enctimer = self._encthreshold - mod
                 encounter_list = enc.roll_encounters(div, self.chance)
-                log.warning(encounter_list)
                 encounter_strs = ["Random encounters rolled:\n"]
                 for enc in encounter_list:
                     if enc[1] is None:
